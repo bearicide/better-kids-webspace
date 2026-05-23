@@ -1,36 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emme's Studio | Better Kids Webspace</title>
-  <style>
-    :root{--cyan:#22d3ee;--green:#22c55e;--yellow:#facc15;--line:rgba(255,255,255,.15);--muted:#cbd5e1}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;min-height:100vh;background:radial-gradient(circle at 15% 10%,rgba(34,211,238,.22),transparent 30%),radial-gradient(circle at 85% 70%,rgba(34,197,94,.14),transparent 32%),linear-gradient(135deg,#020617,#111827,#18181b);color:white;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
-    .wrap{width:min(1120px,calc(100% - 28px));margin:0 auto}.top{position:sticky;top:0;z-index:5;background:rgba(0,0,0,.65);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-    nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;flex-wrap:wrap}.brand{font-weight:1000;letter-spacing:.08em}.links{display:flex;gap:8px;flex-wrap:wrap}a,button{border:1px solid var(--line);border-radius:999px;padding:11px 15px;background:rgba(255,255,255,.08);color:white;text-decoration:none;font-weight:900;cursor:pointer}a:hover,button:hover{background:rgba(255,255,255,.16);transform:translateY(-1px)}
-    .hero{padding:58px 0 28px}.card{border:1px solid var(--line);border-radius:34px;background:rgba(0,0,0,.52);box-shadow:0 0 60px rgba(34,211,238,.12);padding:clamp(24px,6vw,56px)}
-    h1{font-size:clamp(3rem,9vw,6.5rem);line-height:.9;margin:0 0 16px;font-weight:1000;background:linear-gradient(90deg,#e2e8f0,#22d3ee,#22c55e,#facc15);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-transform:uppercase}
-    .lead{font-size:clamp(1.15rem,3vw,1.55rem);color:var(--muted);font-weight:800;max-width:820px}.grid{display:grid;gap:20px}.two{grid-template-columns:1.1fr .9fr}section{padding:28px 0}.panel{border:1px solid var(--line);border-radius:28px;background:rgba(15,23,42,.72);padding:22px}.panel h2{margin:0 0 14px;font-size:clamp(1.8rem,5vw,3rem);line-height:1;font-weight:1000}.muted{color:var(--muted);font-weight:750}
-    label{display:block;text-transform:uppercase;letter-spacing:.18em;color:var(--cyan);font-size:.78rem;font-weight:1000;margin:0 0 8px}input,textarea,select{width:100%;border:1px solid rgba(255,255,255,.16);border-radius:18px;background:rgba(0,0,0,.38);color:white;padding:15px;font-size:1rem;outline:none}textarea{min-height:150px;resize:vertical}
-    .stack{display:grid;gap:16px}.primary{background:var(--cyan);color:#020617;border-color:transparent}.danger{background:rgba(239,68,68,.18);border-color:rgba(239,68,68,.35)}.row{display:flex;gap:10px;flex-wrap:wrap}.tiny{font-size:.9rem;color:#94a3b8;font-weight:800}.prompt{min-height:88px;display:grid;align-content:center;color:#e2e8f0;font-weight:900}.lovable{background:linear-gradient(135deg,rgba(34,211,238,.12),rgba(34,197,94,.1));border-color:rgba(34,211,238,.25)}
-    .lovable-links{display:grid;gap:12px}.lovable-links a{display:block;text-align:center;font-size:1rem}
-    @media(max-width:850px){.two{grid-template-columns:1fr}h1{font-size:3rem}}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Emme's Studio</title>
+<style>
+:root{
+--bg:#f8fafc;
+--panel:#ffffff;
+--line:#dbe4ee;
+--text:#334155;
+--soft:#64748b;
+--mint:#c7f9e9;
+--peach:#ffe5d4;
+--lav:#e9ddff;
+--sky:#dff4ff;
+--yellow:#fff4bf;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#f8fafc,#eef6ff);font-family:Arial,Helvetica,sans-serif;color:var(--text);overflow-x:hidden}
+.wrap{width:min(1180px,calc(100% - 24px));margin:auto}
+.top{position:sticky;top:0;background:rgba(255,255,255,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:10}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:12px;flex-wrap:wrap}
+.brand{font-weight:1000;letter-spacing:.08em;font-size:1.1rem}
+.links{display:flex;gap:8px;flex-wrap:wrap}
+a,button{border:none;border-radius:999px;padding:12px 16px;background:white;color:var(--text);text-decoration:none;font-weight:900;cursor:pointer;box-shadow:0 4px 14px rgba(15,23,42,.06)}
+a:hover,button:hover{transform:translateY(-2px)}
+.hero{padding:50px 0 24px}
+.hero-card{background:white;border:1px solid var(--line);border-radius:42px;padding:clamp(24px,6vw,64px);box-shadow:0 20px 50px rgba(15,23,42,.06);position:relative;overflow:hidden}
+.hero-card:after{content:"xoxo ✨ lol 🌷 ☁️ 📚 🎧 ✨";position:absolute;right:24px;bottom:18px;font-size:1.3rem;opacity:.18;font-weight:1000}
+h1{margin:0;font-size:clamp(3rem,10vw,6.5rem);line-height:.9;font-weight:1000;color:#1e293b}
+.lead{max-width:760px;font-size:clamp(1.1rem,3vw,1.5rem);line-height:1.5;color:var(--soft);font-weight:700;margin-top:16px}
+.grid{display:grid;gap:18px}.two{grid-template-columns:1fr 1fr}.three{grid-template-columns:repeat(3,1fr)}.four{grid-template-columns:repeat(4,1fr)}
+section{padding:18px 0}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:34px;padding:22px;box-shadow:0 8px 30px rgba(15,23,42,.04)}
+.round{border-radius:999px}
+.panel h2{margin:0 0 14px;font-size:clamp(1.5rem,5vw,2.5rem);line-height:1;font-weight:1000}
+.soft{color:var(--soft);font-weight:700;line-height:1.5}
+label{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.18em;font-weight:1000;margin:0 0 8px;color:#64748b}
+input,textarea,select{width:100%;border:1px solid var(--line);border-radius:24px;padding:16px;background:#f8fafc;color:#334155;font-size:1rem;outline:none}
+textarea{resize:vertical;min-height:130px}
+.stack{display:grid;gap:16px}.row{display:flex;gap:10px;flex-wrap:wrap}.primary{background:var(--mint)}.lav{background:var(--lav)}.sky{background:var(--sky)}.peach{background:var(--peach)}.yellow{background:var(--yellow)}
+.cardlet{padding:20px;border-radius:28px;border:1px solid var(--line);background:#fff;min-height:180px;display:flex;flex-direction:column;justify-content:space-between}
+.cardlet h3{margin:0 0 8px;font-size:1.3rem}
+.taglist{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.tag{padding:10px 14px;border-radius:999px;background:#f8fafc;border:1px solid var(--line);font-weight:800;font-size:.92rem}
+.prompt{min-height:110px;display:grid;place-items:center;text-align:center;font-weight:900;color:#475569;background:#f8fafc}
+.bookshelf{display:grid;gap:10px}.book{padding:14px 16px;border-radius:22px;background:#f8fafc;border:1px solid var(--line);font-weight:800}
+footer{text-align:center;padding:34px 0 44px;color:#64748b;font-weight:800}
+@media(max-width:900px){.two,.three,.four{grid-template-columns:1fr}h1{font-size:3rem}}
+</style>
 </head>
 <body>
-<header class="top"><nav class="wrap"><div class="brand">🎨 EMME'S STUDIO</div><div class="links"><a href="../">Hub</a><a href="../kai/">Kai</a></div></nav></header>
+<header class="top">
+<nav class="wrap">
+<div class="brand">🎨 EMME'S STUDIO DISTRICT</div>
+<div class="links">
+<a href="../">Hub</a>
+<a href="../kai/">Kai</a>
+</div>
+</nav>
+</header>
+
 <main class="wrap">
-<section class="hero"><div class="card"><h1>Emme's Studio District</h1><p class="lead">A darker, pretty, actually-useful high-school creative page with a local-save journal and prompt machine.</p></div></section>
-<section class="grid two"><div class="panel stack"><h2>📓 Interactive Journal</h2><div><label for="mood">Current Mood</label><input id="mood"></div><div><label for="entry">Journal Entry</label><textarea id="entry"></textarea></div><div><label for="goals">Tiny Goal List</label><textarea id="goals"></textarea></div><div class="row"><button class="primary" onclick="saveJournal()">💾 Save</button><button onclick="loadJournal()">📂 Load</button><button class="danger" onclick="clearJournal()">🧹 Reset</button></div><p id="saveStatus" class="tiny">Status: ready.</p></div><div class="panel stack"><h2>✨ Prompt Generator</h2><select id="promptType"><option>Story prompt</option><option>Art prompt</option><option>Character idea</option></select><button class="primary" onclick="makePrompt()">Generate</button><div id="promptBox" class="panel prompt">Prompt appears here.</div></div></section>
-<section><div class="panel lovable"><h2>💻 Build Your Own Apps + Sites</h2><p class="muted">Tools for making your own websites, apps, portfolios, journals, weird art pages, and interactive ideas.</p><div class="lovable-links"><a href="https://lovable.dev" target="_blank">🚀 Open Lovable</a><a href="https://github.com" target="_blank">🌐 GitHub</a><a href="https://coolors.co" target="_blank">🎨 Color Palette Generator</a><a href="https://fonts.google.com" target="_blank">🔤 Google Fonts</a></div></div></section>
+<section class="hero">
+<div class="hero-card">
+<h1>Emme's Studio</h1>
+<p class="lead">A soft little creative operating system for writing, reading, worldbuilding, playlists, art ideas, websites, and thoughtful weirdness. clean lines. rounded chubby things. xoxo energy.</p>
+</div>
+</section>
+
+<section class="grid two">
+<div class="panel stack mint">
+<h2>📓 Interactive Journal</h2>
+<div>
+<label for="mood">Current Mood</label>
+<input id="mood" placeholder="dreamy but caffeinated" />
+</div>
+<div>
+<label for="entry">Journal Entry</label>
+<textarea id="entry" placeholder="write the thought before it evaporates..."></textarea>
+</div>
+<div>
+<label for="goals">Tiny Goal List</label>
+<textarea id="goals" placeholder="read. sketch. survive. maybe drink tea."></textarea>
+</div>
+<div class="row">
+<button class="primary" onclick="saveJournal()">💾 Save</button>
+<button onclick="loadJournal()">📂 Load</button>
+<button class="peach" onclick="clearJournal()">🧹 Reset</button>
+</div>
+<div id="saveStatus" class="soft">Status: ready.</div>
+</div>
+
+<div class="panel stack sky">
+<h2>✨ Prompt Machine</h2>
+<select id="promptType">
+<option>Story prompt</option>
+<option>Art prompt</option>
+<option>Character idea</option>
+<option>Playlist mood</option>
+</select>
+<button class="lav" onclick="makePrompt()">Generate Prompt</button>
+<div id="promptBox" class="prompt panel">prompt appears here ✨</div>
+</div>
+</section>
+
+<section class="grid three">
+<div class="panel cardlet peach">
+<div>
+<h3>📚 Book Nook</h3>
+<p class="soft">Track books, quotes, thoughts, and brain-changing stories.</p>
+<div class="bookshelf">
+<div class="book">📖 currently reading</div>
+<div class="book">☁️ favorite quotes</div>
+<div class="book">🌧️ rainy day books</div>
+</div>
+</div>
+</div>
+
+<div class="panel cardlet mint">
+<div>
+<h3>✍️ Writing Lab</h3>
+<p class="soft">Character builders, chapter ideas, dialogue snippets, and world timelines.</p>
+<div class="taglist">
+<span class="tag">plot twists</span>
+<span class="tag">scene ideas</span>
+<span class="tag">dialogue</span>
+</div>
+</div>
+</div>
+
+<div class="panel cardlet lav">
+<div>
+<h3>🌍 Worldbuilding</h3>
+<p class="soft">Maps, fake newspapers, timelines, and alternate-history vibes.</p>
+<div class="taglist">
+<span class="tag">1920s</span>
+<span class="tag">WWI</span>
+<span class="tag">fiction</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="grid four">
+<div class="panel cardlet sky"><div><h3>🎧 Soundtrack Wall</h3><p class="soft">Songs attached to scenes, moods, and characters.</p></div></div>
+<div class="panel cardlet yellow"><div><h3>🪐 Planet Museum</h3><p class="soft">Gallery space for clay planets and tiny worlds.</p></div></div>
+<div class="panel cardlet peach"><div><h3>☕ Focus Cafe</h3><p class="soft">Study timer, calming vibes, and quiet productivity.</p></div></div>
+<div class="panel cardlet lav"><div><h3>🔒 Secret Vault</h3><p class="soft">Letters to future self, dreams, and hidden notes.</p></div></div>
+</section>
+
+<section>
+<div class="panel mint">
+<h2>💻 Build Your Own Apps + Sites</h2>
+<p class="soft">Cute tools for making websites, journals, portfolios, weird pages, and aesthetic internet experiments.</p>
+<div class="grid two">
+<a href="https://lovable.dev" target="_blank" class="panel round">🚀 Lovable</a>
+<a href="https://github.com" target="_blank" class="panel round">🌐 GitHub</a>
+<a href="https://coolors.co" target="_blank" class="panel round">🎨 Coolors</a>
+<a href="https://fonts.google.com" target="_blank" class="panel round">🔤 Google Fonts</a>
+</div>
+</div>
+</section>
 </main>
+
+<footer>
+Emme's Studio District ✨ xoxo lol ☁️
+</footer>
+
 <script>
 const STORAGE_KEY='better-kids-webspace-emme';
-const prompts={"Story prompt":["A hallway becomes a train station at midnight.","A playlist opens memories."],"Art prompt":["A neon greenhouse over an abandoned mall.","A moss planet full of mirrors."],"Character idea":["A girl who photographs forgotten dreams.","A teenager who collects hidden sounds."]};
+const prompts={
+"Story prompt":["A hallway becomes a train station after midnight.","A girl discovers a notebook that edits yesterday.","A city remembers every person who leaves it."],
+"Art prompt":["A floating greenhouse above a rainy mall.","A soft pink sunset over abandoned arcades.","A bedroom window looking into impossible weather."],
+"Character idea":["A photographer who captures forgotten dreams.","A girl who hides messages in playlists.","A quiet historian obsessed with tiny details."],
+"Playlist mood":["rain on windows + soft bass + neon signs","coming-of-age movie ending credits","2am studying while the world sleeps"]
+};
 function status(m){document.getElementById('saveStatus').textContent='Status: '+m}
-function saveJournal(){const data={mood:mood.value,entry:entry.value,goals:goals.value};localStorage.setItem(STORAGE_KEY,JSON.stringify(data));status('saved locally')}
-function loadJournal(){const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return status('nothing saved');const data=JSON.parse(raw);mood.value=data.mood||'';entry.value=data.entry||'';goals.value=data.goals||'';status('loaded')}
+function saveJournal(){const data={mood:mood.value,entry:entry.value,goals:goals.value};localStorage.setItem(STORAGE_KEY,JSON.stringify(data));status('saved locally ✨')}
+function loadJournal(){const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return status('nothing saved yet');const data=JSON.parse(raw);mood.value=data.mood||'';entry.value=data.entry||'';goals.value=data.goals||'';status('loaded successfully ✨')}
 function clearJournal(){localStorage.removeItem(STORAGE_KEY);mood.value='';entry.value='';goals.value='';status('reset complete')}
 function makePrompt(){const type=promptType.value;const list=prompts[type];promptBox.textContent=list[Math.floor(Math.random()*list.length)]}
 loadJournal();
